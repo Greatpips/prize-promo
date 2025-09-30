@@ -18,7 +18,7 @@ function Steps() {
     },
     {
       id: 3,
-      title: "Trade at least 100 Lot",
+      title: "Trade at least 100 Lots",
       icon: <BarChart3 className="w-12 h-12 text-[rgb(215,163,106)]" />,
     },
     {
