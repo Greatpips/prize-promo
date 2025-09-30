@@ -72,7 +72,7 @@ function Slider() {
         >
           {fullSliderContent.map((item, index) => (
             <div key={index} className="w-1/6 flex-shrink-0 p-4">
-              <div className="bg-[rgb(2,0,47)] p-8 rounded-xl h-full flex flex-col justify-center items-center transform transition duration-300 border-4 border-[rgb(215,163,106)] ">
+              <div className="bg-[rgb(5,2,65)] p-8 rounded-xl h-full flex flex-col justify-center items-center transform transition duration-300 border-4 border-[rgb(215,163,106)] ">
                 <item.icon
                   className={`w-12 h-12 mb-3 text-[rgb(215,163,106)]`}
                   strokeWidth={1.5}
@@ -102,15 +102,15 @@ function Slider() {
                   : "opacity-0 translate-x-full z-0"
               }`}
             >
-              <div className="bg-gray-800 p-6 rounded-xl shadow-2xl h-full flex flex-col justify-center items-center border border-gray-700">
+              <div className="bg-[rgb(5,2,65)] border-4  p-6 rounded-xl shadow-2xl h-full flex flex-col justify-center items-center  border-[rgb(215,163,106)]">
                 <item.icon
-                  className={`w-10 h-10 mb-3 ${item.color}`}
+                  className={`w-10 h-10 mb-3 text-[rgb(215,163,106)]`}
                   strokeWidth={1.5}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-2 leading-snug">
+                <h2 className="text-xl font-bold text-[rgb(215,163,106)] text-center mb-2 leading-snug">
                   {item.title}
                 </h2>
-                <p className="text-gray-400 text-center text-sm mt-1">
+                <p className="text-[rgb(215,163,106)] text-center text-sm mt-1">
                   {item.description}
                 </p>
               </div>
