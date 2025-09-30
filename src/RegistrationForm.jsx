@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
@@ -14,12 +14,6 @@ import {
   Linkedin,
   MonitorPlay,
 } from "lucide-react";
-
-// 🎨 Gradient constants
-const GRADIENT_TEXT_CLASS =
-  "bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-lime-500 to-teal-700";
-const GRADIENT_BUTTON_CLASS =
-  "bg-gradient-to-r from-green-800 via-green-900 to-gray-900 hover:from-green-700 hover:to-gray-800 transition-all duration-300 shadow-lg shadow-green-700/50";
 
 // 📱 Social media options
 const SOCIAL_OPTIONS = [
@@ -75,13 +69,32 @@ function RegistrationForm({ isOpen, onClose }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
-  // 🔄 Reset when modal closes
+  // ✅ Redirect after showing success
+  useEffect(() => {
+    if (isSubmitted) {
+      const fadeTimer = setTimeout(() => {
+        setFadeOut(true);
+      }, 2000); // start fade after 2s
+
+      const redirectTimer = setTimeout(() => {
+        window.location.href = "https://mygtcportal.com/getview?view=register&token=eyzowwwwAowwwwww"; // 🔗 replace with real link
+      }, 2500); // redirect after fade
+
+      return () => {
+        clearTimeout(fadeTimer);
+        clearTimeout(redirectTimer);
+      };
+    }
+  }, [isSubmitted]);
+
   const resetForm = () => {
     setFormData(initialFormData);
     setIsSubmitted(false);
     setIsSubmitting(false);
     setDropdownOpen(false);
+    setFadeOut(false);
   };
 
   const handleClose = () => {
@@ -158,17 +171,23 @@ function RegistrationForm({ isOpen, onClose }) {
           <motion.div
             className="relative w-full max-w-lg mx-auto p-6 md:p-10 rounded-3xl bg-white border border-[rgb(215,163,106)] shadow-2xl shadow-green-500/30"
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            animate={{
+              opacity: fadeOut ? 0 : 1,
+              scale: fadeOut ? 0.95 : 1,
+              y: fadeOut ? 20 : 0,
+            }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* Close button */}
-            <button
-              onClick={handleClose}
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
-            >
-              <X size={28} />
-            </button>
+            {!isSubmitted && (
+              <button
+                onClick={handleClose}
+                className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+              >
+                <X size={28} />
+              </button>
+            )}
 
             {isSubmitted ? (
               <motion.div
@@ -177,31 +196,16 @@ function RegistrationForm({ isOpen, onClose }) {
                 animate={{ opacity: 1, scale: 1 }}
               >
                 <CheckCircle className="text-[rgb(215,163,106)]" size={64} />
-                <h2
-                  className={`text-3xl md:text-4xl font-extrabold text-[rgb(215,163,106)]`}
-                >
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[rgb(215,163,106)]">
                   Registration Successful!
                 </h2>
                 <p className="text-gray-700 text-lg">
-                  Thank you for showing interest. Your data has been recorded.
+                  Thank you for showing interest. You’ll be redirected shortly.
                 </p>
-
-                {/* ✅ Join the Challenge Button */}
-                <a
-                  href="https://example.com" // 🔗 replace with your real link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`relative inline-block px-8 py-4 font-bold bg-[rgb(215,163,106)] text-white hover:bg-[rgb(2,0,47)] transition-colors duration-200 ease-in-out rounded-xl uppercase text-lg  overflow-hidden group`}
-                >
-                  <span className="relative z-10">Register Now</span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgb(215,163,106)] to-transparent opacity-40 translate-x-[-100%] group-hover:animate-slideGlow"></span>
-                </a>
               </motion.div>
             ) : (
               <>
-                <h2
-                  className={`text-3xl md:text-4xl font-extrabold text-center mb-8 text-[rgb(215,163,106)]`}
-                >
+                <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8 text-[rgb(215,163,106)]">
                   Register Your Interest
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -259,7 +263,10 @@ function RegistrationForm({ isOpen, onClose }) {
                         className="w-full flex justify-between items-center bg-gray-50 text-gray-900 p-3 rounded-xl border border-[rgb(215,163,106)] focus:ring-2 focus:ring-[rgb(215,163,106)]"
                       >
                         <div className="flex items-center space-x-2">
-                          <SelectedIcon size={20} className="text-[rgb(215,163,106)]" />
+                          <SelectedIcon
+                            size={20}
+                            className="text-[rgb(215,163,106)]"
+                          />
                           <span>{selectedSocial.name}</span>
                         </div>
                         <ChevronDown
@@ -288,7 +295,10 @@ function RegistrationForm({ isOpen, onClose }) {
                                   onClick={() => handleDropdownSelect(app.id)}
                                   className="w-full text-left flex items-center space-x-3 p-3 text-gray-700 hover:bg-green-100 rounded-xl"
                                 >
-                                  <AppIcon size={20} className="text-[rgb(215,163,106)]" />
+                                  <AppIcon
+                                    size={20}
+                                    className="text-[rgb(215,163,106)]"
+                                  />
                                   <span>{app.name}</span>
                                 </button>
                               );
@@ -302,7 +312,7 @@ function RegistrationForm({ isOpen, onClose }) {
                   <button
                     type="submit"
                     disabled={isSubmitting || !formData.heardFrom}
-                    className={`w-full py-4 mt-6 text-xl font-bold rounded-xl text-white uppercase bg-[rgb(215,163,106)] disabled:opacity-50 flex items-center justify-center`}
+                    className="w-full py-4 mt-6 text-xl font-bold rounded-xl text-white uppercase bg-[rgb(215,163,106)] disabled:opacity-50 flex items-center justify-center"
                   >
                     {isSubmitting ? "Submitting..." : "Submit Registration"}
                   </button>

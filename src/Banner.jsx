@@ -31,7 +31,7 @@ function Banner() {
       className="w-full h-full object-cover" />
   </div>
 
-   <div className="absolute top-1/7  left-[2%] ">
+   <div className="absolute top-[4%]  left-1/3 ">
         <button
           onClick={() => setOpen(true)}
           className="block sm:hidden py-2 px-2 bg-[rgb(215,163,106)] font-bold text-white rounded-xl shadow-lg hover:bg-[rgb(2,0,47)] transition-color ease-in-out duration-300"

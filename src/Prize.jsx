@@ -23,7 +23,7 @@ function Prize() {
           <div className="md:col-span-2 flex flex-col items-center">
             <p className="text-[rgb(215,163,106)] text-[1.5rem] font-bold">100 Lot</p>
             <img src={iphone17} alt="iPhone 17 Pro" className="w-50 md:w-80 animate-constant-glow delay-0" />
-            <h3 className="text-[rgb(215,163,106)] text-[1.6rem] font-bold">iPhone 17 Pro</h3>
+            <h3 className="text-[rgb(215,163,106)] text-[1.6rem] font-bold">iPhone 17 Pro Max</h3>
           </div>
 
           {/* Airpods (Tier 2 - Gray) */}

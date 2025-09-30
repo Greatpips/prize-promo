@@ -8,25 +8,25 @@ function Steps() {
   const steps = [
     {
       id: 1,
-      title: "Open a live trading account with GTCFX",
+      title: "Open A Live Trading Account With GTCFX",
       icon: <UserPlus className="w-12 h-12 text-[rgb(215,163,106)]" />,
       extraText: "Get started with a secure account today!",
     },
     {
       id: 2,
-      title: "Make a deposit of at least 10 Lot",
+      title: "Fund And Start Trading",
       icon: <Wallet className="w-12 h-12 text-[rgb(215,163,106)]" />,
-      extraText: "Minimum deposit unlocks your eligibility.",
+      extraText: "Deposit funds and dive into the market!",
     },
     {
       id: 3,
-      title: "Trade at least 100 Lots",
+      title: "Follow Us On Our Social Media",
       icon: <BarChart3 className="w-12 h-12 text-[rgb(215,163,106)]" />,
-      extraText: "Boost your chances with active trading!",
+      extraText: "Stay updated with the latest news and tips.",
     },
     {
       id: 4,
-      title: "Fill out the registration form",
+      title: "Fill Out The Registration Form",
       icon: <FileText className="w-12 h-12 text-[rgb(215,163,106)]" />,
       extraText: "Complete your entry in just a few steps.",
     },
@@ -74,7 +74,7 @@ function Steps() {
             </h2>
             {/* Extra text revealed after turn */}
             <motion.p
-              className="text-sm md:text-base text-gray-300 mt-4 opacity-0"
+              className="text-sm md:text-base text-gray-300 font-semibold mt-4 opacity-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
