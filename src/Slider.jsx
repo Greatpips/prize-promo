@@ -52,14 +52,14 @@ function Slider() {
   }, []);
 
   return (
-    <div className="w-full bg-gray-100 pt-5 pb-5 overflow-hidden font-sans border-t-8  border-[rgb(2,0,47)]">
+    <div className="w-full bg-gray-100 pb-5 overflow-hidden font-sans">
       <style>{customStyles}</style>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-[2.5rem] font-bold text-center mb-5 text-[rgb(215,163,106)]">
-          Why Choose Us?
-        </h1>
-      </div>
+        <div className="bg-[rgb(2,0,47)] p-5 mb-8 w-[100%] border-y-4 border-[rgb(215,163,106)] ">
+  <h1 className="text-[2rem] xs:text-[2.5rem] sm:text-[3rem] md:text-[4rem]  text-transparent bg-clip-text bg-gradient-to-r from-[rgb(182,135,86)] via-[rgb(236,186,132)] to-[rgb(182,135,86)] leading-tight font-bold text-center">
+    WHY CHOOSE US?
+  </h1>
+</div>
 
       {/* Desktop infinite glide */}
       <div className="hidden sm:block relative w-full overflow-hidden">
@@ -125,7 +125,7 @@ function Slider() {
               key={index}
               onClick={() => setMobileIndex(index)}
               className={`mx-1 h-2 w-2 rounded-full transition-all duration-300 ${
-                index === mobileIndex ? "bg-blue-400 w-5" : "bg-gray-500"
+                index === mobileIndex ? "bg-[rgb(215,163,106)] w-5" : "bg-gray-500"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
