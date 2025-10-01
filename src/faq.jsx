@@ -4,29 +4,29 @@ import RegistrationForm from "./RegistrationForm";
 
 const faqs = [
   {
-    question: "Who Should Attend This Seminar",
+    question: "How can I qualify for the iPhone 17 Pro Max campaign?",
     answer:
-      "Anyone ready to level up their trading game! Whether you're just getting started or looking to sharpen your skills, this seminar is for you. If you're curious, driven, and eager to learn from the pros. Don't miss it",
+      "To qualify, you need to fund your trading account, follow GTCFX on all social media platforms (instagram: @gtcfx_nigeria) (Facebook: @Gtcfx Global Nigeria), and trade up to 100 standard lots within the campaign period.",
   },
   {
-    question: "What Topic Will Be Covered In This Seminar",
+    question: "Do I need to complete the 100 lots in one trade?",
     answer:
-      "We're packing a lot into this power hour! Expect expert tips from Seasoned Market Mentors, live market insights, mindset training for discipline and accountability, and ways to stay plugged into a strong trading community",
+      "No. The 100 lots can be accumulated across multiple trades during the campaign duration.",
   },
   {
-    question: "How Long Is The Seminar",
+    question: "What is the campaign duration?",
     answer:
-      "Just one hour. Short, sharp, and full of value. You'll walk away with real insights you can use right away.",
+      "The campaign runs from 3rd of october to 31st of october . Only trades executed within this period will count toward the target.",
   },
   {
-    question: "Is There A Fee To Attend",
+    question: "Is this campaign open to all traders?",
     answer:
-      "Nope! It's 100% free. All you need is your time and your drive to learn.",
+      "Yes. The campaign is open to both new and existing clients who meet the funding and trading requirements.",
   },
   {
-    question: "Gifts You Stand A Chance Of Winning",
+    question: "When will the winner receive the iPhone 17 Pro Max?",
     answer:
-      "1. Iphones, 2.Airpods, 3. Smart Watches, 4. Power Banks, and so much more!",
+      "The first trader to complete 100 standard lots will be announced as the winner, and delivery/shipping arrangements will be made immediately after verification.",
   },
 ];
 

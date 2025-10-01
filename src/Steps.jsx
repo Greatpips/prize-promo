@@ -24,12 +24,6 @@ function Steps() {
       icon: <BarChart3 className="w-12 h-12 text-[rgb(215,163,106)]" />,
       extraText: "Stay updated with the latest news and tips.",
     },
-    {
-      id: 4,
-      title: "Fill Out The Registration Form",
-      icon: <FileText className="w-12 h-12 text-[rgb(215,163,106)]" />,
-      extraText: "Complete your entry in just a few steps.",
-    },
   ];
 
   return (
@@ -42,51 +36,51 @@ function Steps() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
         {steps.map((step, index) => (
-          <motion.div
-            key={step.id}
-            className="bg-[rgb(5,2,65)] border-4 border-[rgb(215,163,106)] rounded-2xl p-10 flex flex-col items-center text-center shadow-lg preserve-3d"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }} // Run once when 30% in view
-            transition={{
-              duration: 0.6,
-              delay: index * 0.3, // stagger fade-in
-              ease: "easeOut",
-            }}
-            style={{ transformStyle: "preserve-3d" }} // Enable 3D space
-            // 3D turn animation, runs once
-            animate={{
-              rotateY: [0, 90, 0], // Turn 90 degrees and back
-              transition: {
-                rotateY: {
-                  duration: 1.2,
-                  delay: 0.6 + index * 1.5, // 0.6s after fade-in + 1.5s stagger per item
-                  ease: "easeInOut",
-                },
-              },
-            }}
-          >
-            <div className="mb-6 origin-center">{step.icon}</div>
-            <h2 className="text-xl md:text-2xl font-semibold leading-snug">
-              {step.id}. {step.title}
-            </h2>
-            {/* Extra text revealed after turn */}
-            <motion.p
-              className="text-sm md:text-base text-gray-300 font-semibold mt-4 opacity-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                delay: 1.8 + index * 1.5, // Reveal after turn (1.8s + longer stagger)
-                duration: 0.5,
-                ease: "easeOut",
-              }}
-            >
-              {step.extraText}
-            </motion.p>
-          </motion.div>
-        ))}
+  <motion.div
+    key={step.id}
+    className={`bg-[rgb(5,2,65)] border-4 border-[rgb(215,163,106)] rounded-2xl p-10 flex flex-col items-center text-center shadow-lg preserve-3d 
+      ${index === steps.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{
+      duration: 0.6,
+      delay: index * 0.3,
+      ease: "easeOut",
+    }}
+    style={{ transformStyle: "preserve-3d" }}
+    animate={{
+      rotateY: [0, 90, 0],
+      transition: {
+        rotateY: {
+          duration: 1.2,
+          delay: 0.6 + index * 1.5,
+          ease: "easeInOut",
+        },
+      },
+    }}
+  >
+    <div className="mb-6 origin-center">{step.icon}</div>
+    <h2 className="text-xl md:text-2xl font-semibold leading-snug">
+      {step.id}. {step.title}
+    </h2>
+    <motion.p
+      className="text-sm md:text-base text-gray-300 font-semibold mt-4 opacity-0"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        delay: 1.8 + index * 1.5,
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+    >
+      {step.extraText}
+    </motion.p>
+  </motion.div>
+))}
+
       </div>
       <div className="bg-gray-100 text-center pt-16">
         <button
