@@ -71,7 +71,7 @@ function Prize() {
           `}
         </style>
       </div>
-      <div className="bg-gray-100 text-center pt-8">
+      <div className="bg-gray-100 text-center pt-8 pb-8">
         <button
           onClick={() => setOpen(true)}
           className="py-4 px-16 bg-[rgb(215,163,106)] font-bold text-white rounded-xl shadow-lg hover:bg-[rgb(2,0,47)] transition-color ease-in-out duration-300"

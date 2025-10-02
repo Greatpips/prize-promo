@@ -27,7 +27,7 @@ function Steps() {
   ];
 
   return (
-    <div className="bg-gray-100 text-[rgb(215,163,106)] py-16 perspective-1000">
+    <div className="bg-gray-100 text-[rgb(215,163,106)] pb-16 perspective-1000">
       {/* Title */}
       <div className="bg-[rgb(2,0,47)] p-5 mb-8 w-[100%] border-y-4 border-[rgb(215,163,106)]">
         <h1 className="text-[2rem] xs:text-[2.5rem] sm:text-[3rem] md:text-[4rem] text-transparent bg-clip-text bg-gradient-to-r from-[rgb(182,135,86)] via-[rgb(236,186,132)] to-[rgb(182,135,86)] leading-tight font-bold text-center">

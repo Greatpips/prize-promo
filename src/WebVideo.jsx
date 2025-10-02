@@ -1,0 +1,80 @@
+import React, { useEffect, useRef, useState } from 'react';
+
+const WebVideo = () => {
+  const videoRef = useRef(null);
+  const [hasInteracted, setHasInteracted] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !hasInteracted) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const videoSrc = video.getAttribute('src');
+        const baseSrc = videoSrc.split('?')[0]; // Get base URL without query params
+        if (entry.isIntersecting) {
+          video.setAttribute('src', `${baseSrc}?autoplay=1&controls=0&showinfo=0&modestbranding=1&rel=0`);
+        } else {
+          video.setAttribute('src', `${baseSrc}?controls=0&showinfo=0&modestbranding=1&rel=0`);
+        }
+      });
+    }, observerOptions);
+
+    videoObserver.observe(video);
+
+    return () => {
+      videoObserver.unobserve(video);
+    };
+  }, [hasInteracted]);
+
+  const handleInteraction = () => {
+    console.log('Button clicked, setting hasInteracted to true');
+    setHasInteracted(true);
+  };
+
+  return (
+    <section id="features" className="bg-white px-0 sm:px-0 md:px-0">
+      <div className="bg-[rgb(2,0,47)] py-4 border-y-4 border-[rgb(215,163,106)] ">
+        <h1
+          className="text-[2rem] xs:text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] text-transparent bg-clip-text bg-gradient-to-r from-[rgb(182,135,86)] via-[rgb(236,186,132)] to-[rgb(182,135,86)] leading-tight font-bold text-center"
+        >
+          HOW TO WIN AN IPHONE 17 PRO MAX IN GTCFX
+        </h1>
+      </div>
+
+      <div className="w-full overflow-hidden relative">
+        {!hasInteracted && (
+          <div className="absolute inset-0 flex items-center justify-start md:justify-start px-4 sm:px-6 bg-[rgb(2,0,47)] bg-opacity-70 z-10">
+            <button
+              onClick={handleInteraction}
+              className="bg-[rgb(182,135,86)] z-20 text-[0.9rem] xs:text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] text-white px-4 xs:px-6 sm:px-8 md:px-10 py-2 xs:py-3 sm:py-4 rounded-2xl hover:bg-[rgb(2,0,47)] focus:ring-2 focus:ring-[rgb(182,135,86)] focus:outline-none active:bg-[rgb(2,0,47)] transition duration-300 mt-4 sm:mt-[2em] mx-auto md:ml-[6rem] md:mx-0"
+              aria-label="Watch the webinar now"
+            >
+              Watch Now
+            </button>
+          </div>
+        )}
+        <div className="">
+          <iframe
+            ref={videoRef}
+            className="w-full h-[400px] md:h-[600px] pointer-events-none"
+            src="https://www.youtube.com/embed/pM7Z6latjsw"
+            title="Webinar: What You Will Learn in This Seminar"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            onLoad={() => console.log('Iframe loaded')}
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WebVideo;
