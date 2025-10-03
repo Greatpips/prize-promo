@@ -26,8 +26,7 @@ const SOCIAL_OPTIONS = [
 ];
 
 // ✅ Google Sheets endpoint
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwC67_Kc7JOtxBSsURzr3iuxkbopFNsYjOS9c3fct1Wo0GvyGK1jOfcq_spZ4kl-gwRTg/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUTk3R_20GJJWkqlAJPKt9aGTeGTBOjEdNDAfXxPXK38zU1epr16gyuegNxdDx4A4c/exec";
 
 // 📝 Reusable input
 const FormInput = ({ label, name, type, value, onChange, Icon, required }) => (
