@@ -42,9 +42,9 @@ const WebVideo = () => {
     <section id="features" className="bg-white px-0 sm:px-0 md:px-0">
       <div className="bg-[rgb(2,0,47)] py-4 border-y-4 border-[rgb(215,163,106)] ">
         <h1
-          className="text-[2rem] xs:text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] text-transparent bg-clip-text bg-gradient-to-r from-[rgb(182,135,86)] via-[rgb(236,186,132)] to-[rgb(182,135,86)] leading-tight font-bold text-center"
+          className="text-[2rem] xs:text-[2.5rem] sm:text-[3rem] md:text-[3.3rem] text-transparent bg-clip-text bg-gradient-to-r from-[rgb(182,135,86)] via-[rgb(236,186,132)] to-[rgb(182,135,86)] leading-tight font-bold text-center"
         >
-          HOW TO WIN AN IPHONE 17 PRO MAX IN GTCFX
+          HOW TO WIN AN IPHONE 17 PRO MAX WITH GTCFX
         </h1>
       </div>
 
