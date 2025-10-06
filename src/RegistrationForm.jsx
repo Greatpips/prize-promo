@@ -26,7 +26,8 @@ const SOCIAL_OPTIONS = [
 ];
 
 // ✅ Google Sheets endpoint
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUTk3R_20GJJWkqlAJPKt9aGTeGTBOjEdNDAfXxPXK38zU1epr16gyuegNxdDx4A4c/exec";
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwUTk3R_20GJJWkqlAJPKt9aGTeGTBOjEdNDAfXxPXK38zU1epr16gyuegNxdDx4A4c/exec";
 
 // 📝 Reusable input
 const FormInput = ({ label, name, type, value, onChange, Icon, required }) => (
@@ -78,7 +79,8 @@ function RegistrationForm({ isOpen, onClose }) {
       }, 2000); // start fade after 2s
 
       const redirectTimer = setTimeout(() => {
-        window.location.href = "https://mygtcportal.com/getview?view=register&token=eyzowwwwAowwwwww"; // 🔗 replace with real link
+        window.location.href =
+          "https://mygtcportal.com/getview?view=register&token=eyzowwwwAowwwwww"; // 🔗 replace with real link
       }, 2500); // redirect after fade
 
       return () => {
@@ -114,6 +116,14 @@ function RegistrationForm({ isOpen, onClose }) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
+
+        // ✅ Trigger Meta Pixel & TikTok Pixel events
+        if (typeof fbq !== "undefined") {
+          fbq("track", "CompleteRegistration");
+        }
+        if (typeof ttq !== "undefined") {
+          ttq.track("CompleteRegistration");
+        }
 
         setIsSubmitted(true);
       } catch (error) {
