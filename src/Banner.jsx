@@ -1,4 +1,4 @@
-import DesktopImg from "./img/copy-mobile.png"
+import DesktopImg from "./img/Desktop-view.png"
 import MobileImg from "./img/mobile-view.png"
 import React, { useState } from "react";
 import RegistrationForm from "./RegistrationForm";
@@ -14,11 +14,11 @@ function Banner() {
       className="w-full h-full object-cover" />
   </div>
 
-   <div className="absolute top-2   right-1/4 ">
+   <div className="absolute    left-[70%] top-[8%]">
         <FadeIn>
             <button
           onClick={() => setOpen(true)}
-          className="hidden sm:block py-2 px-4 md:px-6 md:py-4 lg:px-16 bg-[rgb(215,163,106)] font-bold text-white rounded-xl shadow-lg hover:bg-[rgb(2,0,47)] transition-color ease-in-out duration-300"
+          className="hidden sm:block py-2 px-4 md:px-6 md:py-4 lg:px-22 bg-[rgb(215,163,106)] font-bold text-white rounded-xl shadow-lg hover:bg-[rgb(2,0,47)] transition-color ease-in-out duration-300"
         >
           Register Now
         </button>
@@ -31,7 +31,7 @@ function Banner() {
       className="w-full h-full object-cover" />
   </div>
 
-   <div className="absolute top-[4%]  left-1/3 ">
+   <div className="absolute top-[4%]  left-[40%] ">
         <button
           onClick={() => setOpen(true)}
           className="block sm:hidden py-2 px-2 bg-[rgb(215,163,106)] font-bold text-white rounded-xl shadow-lg hover:bg-[rgb(2,0,47)] transition-color ease-in-out duration-300"
