@@ -4,29 +4,29 @@ import RegistrationForm from "./RegistrationForm";
 
 const faqs = [
   {
-    question: "How can I qualify for the iPhone 17 Pro Max campaign?",
+    question: "How Can I Qualify for the gifts?",
     answer:
-      "To qualify, you need to fund your trading account, follow GTCFX on all social media platforms (instagram: @gtcfx_nigeria) (Facebook: @Gtcfx Global Nigeria), and trade up to 100 standard lots within the campaign period.",
+      "To qualify, all you have to do is to register a free account with Gtcfx and start trading to achieve the needed lots. Once you achieve it you automatically will be contacted to claim your prize ",
   },
   {
-    question: "Do I need to complete the 100 lots in one trade?",
+    question: "Do I need to complete the required lot in one trade?",
     answer:
-      "No. The 100 lots can be accumulated across multiple trades during the campaign duration.",
+      "No. The required lots can be accumulated across multiple trades",
   },
   {
-    question: "What is the campaign duration?",
+    question: "What is the duration for this promo?",
     answer:
-      "The campaign runs from 3rd of october to 31st of october . Only trades executed within this period will count toward the target.",
+      "From 1st of November 2025 to January 2025",
   },
   {
-    question: "Is this campaign open to all traders?",
+    question: "Is the promo opened to all traders?",
     answer:
-      "Yes. The campaign is open to both new and existing clients who meet the funding and trading requirements.",
+      "Yes. The promo is open to both new and existing clients who meet the funding and trading requirements.",
   },
   {
-    question: "When will the winner receive the iPhone 17 Pro Max?",
+    question: "When will the winners receive their gifts?",
     answer:
-      "The first trader to complete 100 standard lots will be announced as the winner, and delivery/shipping arrangements will be made immediately after verification.",
+      "once you complete the lots required you will be contacted immediately to claim your prize",
   },
 ];
 
