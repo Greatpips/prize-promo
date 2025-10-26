@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "What is the duration for this promo?",
     answer:
-      "From 1st of November 2025 to January 2025",
+      "From 1st of November 2025 to January 2026",
   },
   {
     question: "Is the promo opened to all traders?",
